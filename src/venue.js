@@ -3,7 +3,8 @@ class Venue {
     static all = []
     static venuesContainer = document.getElementById('venues-container')
 
-    constructor({name, address, all_events}) {
+    constructor({id, name, address, all_events}) {
+        this.id = id
         this.name = name
         this.address = address
         this.all_events = all_events

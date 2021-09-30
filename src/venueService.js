@@ -9,10 +9,10 @@ class VenueService {
         fetch(this.url + `/venues`)
         .then(r => r.json())
         .then(data => {
-            const newData = data["data"]
-            debugger
-            for(const venue of newData){
-                let v = new Venue(venue)
+            // debugger
+            for(const venue of data.data){
+                let v = new Venue({id: venue.id, ...venue.attributes})
+                debugger
                 
                 v.slapOnDom()
             }
