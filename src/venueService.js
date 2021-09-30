@@ -6,12 +6,15 @@ class VenueService {
 
 
     getVenues() {
-        fetch(`${this.endpoint}/venues`)
+        fetch(this.url + `/venues`)
         .then(r => r.json())
-        .then(venues => {
-            for (const venue of venues){
-                const v = new Venue(venue)
-                v.slapOnDom
+        .then(data => {
+            const newData = data["data"]
+            debugger
+            for(const venue of newData){
+                let v = new Venue(venue)
+                
+                v.slapOnDom()
             }
         })
     }
