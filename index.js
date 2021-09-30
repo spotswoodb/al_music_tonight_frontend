@@ -1,7 +1,2 @@
-fetch('http://localhost:3000/venues')
-.then(r => r.json())
-.then(data => renderVenues(data))
+const url = "http://127.0.0.1:3000"
 
-function renderVenues(data){
-    const venues = data["data"];
-}
