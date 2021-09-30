@@ -1,7 +1,7 @@
 class VenueService {
 
-    constructor(endpoint){
-        this.endpoint = endpoint
+    constructor(url){
+        this.url = url
     }
 
 
