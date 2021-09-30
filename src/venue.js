@@ -1,7 +1,7 @@
 class Venue {
 
     static all = []
-    static podcastsContainer = document.getElementById('venues-container')
+    static venuesContainer = document.getElementById('venues-container')
 
     constructor({name, address, all_events}) {
         this.name = name
@@ -14,7 +14,18 @@ class Venue {
     }
 
 
+    render(){
+        this.element.innerHTML = `
+
+            <div data-id="${this.id}">
+            <h2 class="name">${this.name}</h2>
+            <p class="address">${this.address}</p>
+            </div>
+        `
+        return this.element
+    }
+
     slapOnDom(){
-    
+        Venue.venuesContainer.appendChild(this.render())
     }
 }
