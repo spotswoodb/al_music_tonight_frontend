@@ -15,7 +15,7 @@ class Venue {
     }
 
 
-    render(){
+    render = () => {
         this.element.innerHTML = `
 
             <div data-id="${this.id}">
@@ -23,6 +23,14 @@ class Venue {
             <p class="address">${this.address}</p>
             </div>
         `
+       for(const event of this.all_events){
+           
+           let div = document.createElement('div')
+           div.innerHTML = `
+            Name: ${event.name}
+           `
+           this.element.append(div)
+       }
         return this.element
     }
 
