@@ -2,6 +2,7 @@ class Venue {
 
     static all = []
     static venuesContainer = document.getElementById('venues-container')
+    static venueForm = document.getElementById('venue-form-container')
 
     constructor({id, name, address, all_events}) {
         this.id = id
@@ -27,12 +28,26 @@ class Venue {
            
            let div = document.createElement('div')
            div.innerHTML = `
-            Name: ${event.name}
+            Name: ${event.name}<br>
+            Date: ${event.date}<br>
+            ${event.image}
            `
            this.element.append(div)
        }
         return this.element
     }
+
+    static renderForm(){
+        Venue.venueForm.innerHTML += `
+            <form id="new-venue-form">
+                Venue Name: <input type='text' id='name'>
+                Address: <input type='text' id='address'>
+                <input type='submit' id='create'>
+            </form>
+        `
+        document.querySelector('#new-venue-form').addEventListener('submit', VenueService.createEvent)   
+    }
+
 
     slapOnDom(){
         Venue.venuesContainer.appendChild(this.render())

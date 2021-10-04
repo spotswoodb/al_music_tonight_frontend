@@ -12,7 +12,6 @@ class VenueService {
             for(const venue of data.data){
                 
                 let v = new Venue({id: venue.id, ...venue.attributes})
-                // debugger
                 
                 v.slapOnDom()
             }
@@ -20,5 +19,30 @@ class VenueService {
     }
 
 
+    static createVenue(venue){
+        venue.preventDefault()
+        const form = venue.target
+        const data = {
+            venue: {
+                name: form.querySelector(`#name`).value,
+                address: form.querySelector(`#address`).value
+            }
+        }
+        form.reset()
+
+        fetch(this.url + `/venues`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body :JSON.stringify(data)
+        })
+        .then(r => r.json())
+        .then(venue => {
+            const v = new Venue(venue)
+            v.slapOnDom()
+        })
+    }
 
 }
