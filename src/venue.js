@@ -26,11 +26,12 @@ class Venue {
         `
        for(const event of this.all_events){
            
-           let div = document.createElement('div')
+           let div = document.createElement('ul')
            div.innerHTML = `
-            Name: ${event.name}<br>
-            Date: ${event.date}<br>
-            ${event.image}
+            <li>Name: ${event.name}</li>
+            <li>Date: ${event.date}</li>
+            <li><img src='${event.image}'/><li>
+            // add button here -> "see events"
            `
            this.element.append(div)
        }

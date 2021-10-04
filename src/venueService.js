@@ -30,7 +30,7 @@ class VenueService {
         }
         form.reset()
 
-        fetch(`${url}/venues`, {
+        fetch(`${this.url}/venues`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
