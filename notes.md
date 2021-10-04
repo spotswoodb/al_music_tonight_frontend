@@ -6,3 +6,6 @@ Working on event form for adding a new event to a venue...
 
 I should probably create a createEvent method instead of doing everything in the event class?
 
+Why doesn't ${this.url} + '/venues' work in venueService createVenue function?
+
+

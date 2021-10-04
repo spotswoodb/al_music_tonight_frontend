@@ -30,7 +30,7 @@ class VenueService {
         }
         form.reset()
 
-        fetch(this.url + `/venues`, {
+        fetch(`${url}/venues`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,6 +40,7 @@ class VenueService {
         })
         .then(r => r.json())
         .then(venue => {
+            debugger
             const v = new Venue(venue)
             v.slapOnDom()
         })

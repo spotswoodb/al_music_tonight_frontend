@@ -45,7 +45,7 @@ class Venue {
                 <input type='submit' id='create'>
             </form>
         `
-        document.querySelector('#new-venue-form').addEventListener('submit', VenueService.createEvent)   
+        document.querySelector('#new-venue-form').addEventListener('submit', VenueService.createVenue)   
     }
 
 
