@@ -40,7 +40,7 @@ class VenueService {
         })
         .then(r => r.json())
         .then(venue => {
-            debugger
+            // debugger
             const v = new Venue(venue)
             v.slapOnDom()
         })
