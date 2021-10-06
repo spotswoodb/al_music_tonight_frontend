@@ -28,5 +28,12 @@ class Event {
     //     document.querySelector('#new-podcast-form').addEventListener('submit', EventService.createEvent)   
     // }
 
+    // write render function
+
+    // write slapOnDom function
+
+    // play around with where I will be appending events
+
+
 
 }

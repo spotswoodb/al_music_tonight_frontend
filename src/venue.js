@@ -18,7 +18,9 @@ class Venue {
 
     showEvents = () => {
         for(const event of this.all_events){
-            debugger
+            // let e = new Event(event)
+                
+            //     e.slapOnDom()
         }
     }
     render = () => {
