@@ -5,16 +5,16 @@ class Event {
 
     static eventForm = document.getElementById('event-form-container')
 
-    constructor({id, name, address, all_events}) {
+    constructor({id, name, date, time, image}) {
         this.id = id
         this.name = name
-        this.address = address
-        this.all_events = all_events
+        this.date = date
+        this.time = time
+        this.image = image
         this.element = document.createElement('div')
         this.element.dataset.id = this.id
-        this.element.id = `venue-${this.id}`
-        this.element.addEventListener('click', this.showEvents)
-        Venue.all.push(this)
+        this.element.id = `event-${this.id}`
+        Event.all.push(this)
     }
 
     // static renderForm(){
