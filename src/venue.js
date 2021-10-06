@@ -12,10 +12,15 @@ class Venue {
         this.element = document.createElement('div')
         this.element.dataset.id = this.id
         this.element.id = `venue-${this.id}`
+        this.element.addEventListener('click', this.showEvents)
         Venue.all.push(this)
     }
 
-
+    showEvents = () => {
+        for(const event of this.all_events){
+            debugger
+        }
+    }
     render = () => {
         this.element.innerHTML = `
 
@@ -24,17 +29,17 @@ class Venue {
             <p class="address">${this.address}</p>
             </div>
         `
-       for(const event of this.all_events){
+    //    for(const event of this.all_events){
            
-           let div = document.createElement('ul')
-           div.innerHTML = `
-            <li>Name: ${event.name}</li>
-            <li>Date: ${event.date}</li>
-            <li><img src='${event.image}'/><li>
-            // add button here -> "see events"
-           `
-           this.element.append(div)
-       }
+    //        let div = document.createElement('ul')
+    //        div.innerHTML = `
+    //         <li>Name: ${event.name}</li>
+    //         <li>Date: ${event.date}</li>
+    //         <li><img src='${event.image}'/><li>
+    //         // add button here -> "see events"
+    //        `
+    //        this.element.append(div)
+    //    }
         return this.element
     }
 
