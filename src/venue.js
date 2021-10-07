@@ -33,7 +33,6 @@ class Venue {
     showEvents = () => {
         for(const event of this.all_events){
             let e = new Event(event)
-            debugger
                 e.slapOnDom()
         }
     }

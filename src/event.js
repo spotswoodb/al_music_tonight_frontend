@@ -61,9 +61,8 @@ class Event {
 
     slapOnDom(){
         const eventsContainer = document.querySelector(`#venue-${this.venue_id}-events-container`)
-        debugger
 
-        Event.eventsContainer.appendChild(this.render())
+        eventsContainer.appendChild(this.render())
     }
 
 }
