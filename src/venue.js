@@ -27,21 +27,13 @@ class Venue {
         this.element.innerHTML = `
 
             <div data-id="${this.id}">
-            <h2 class="name">${this.name}</h2>
-            <p class="address">${this.address}</p>
+                <h2 class="name">${this.name}</h2>
+                <p class="address">${this.address}</p>
+                
+                <div id="venue-${this.id}-events-container">
+                </div>
             </div>
         `
-    //    for(const event of this.all_events){
-           
-    //        let div = document.createElement('ul')
-    //        div.innerHTML = `
-    //         <li>Name: ${event.name}</li>
-    //         <li>Date: ${event.date}</li>
-    //         <li><img src='${event.image}'/><li>
-    //         // add button here -> "see events"
-    //        `
-    //        this.element.append(div)
-    //    }
         return this.element
     }
 
