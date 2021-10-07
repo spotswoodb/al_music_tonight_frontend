@@ -2,15 +2,15 @@ class Event {
 
 
     static all = []
-    static eventContainer = document.getElementById('events')
     static eventForm = document.getElementById('event-form-container')
 
-    constructor({id, name, date, time, image}) {
+    constructor({id, name, date, time, image, venue_id}) {
         this.id = id
         this.name = name
         this.date = date
         this.time = time
         this.image = image
+        this.venue_id = venue_id
         this.element = document.createElement('ul')
         this.element.dataset.id = this.id
         this.element.id = `event-${this.id}`
@@ -60,7 +60,10 @@ class Event {
 
 
     slapOnDom(){
-        Event.venueContainer.appendChild(this.render())
+        const eventsContainer = document.querySelector(`#venue-${this.venue_id}-events-container`)
+        debugger
+
+        Event.eventsContainer.appendChild(this.render())
     }
 
 }

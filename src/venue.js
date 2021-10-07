@@ -16,13 +16,6 @@ class Venue {
         Venue.all.push(this)
     }
 
-    showEvents = () => {
-        for(const event of this.all_events){
-            // let e = new Event(event)
-                
-            //     e.slapOnDom()
-        }
-    }
     render = () => {
         this.element.innerHTML = `
 
@@ -35,6 +28,14 @@ class Venue {
             </div>
         `
         return this.element
+    }
+
+    showEvents = () => {
+        for(const event of this.all_events){
+            let e = new Event(event)
+            debugger
+                e.slapOnDom()
+        }
     }
 
     static renderForm(){
