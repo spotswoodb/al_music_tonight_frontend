@@ -14,7 +14,7 @@ class Venue {
         this.element = document.createElement('div')
         this.element.dataset.id = this.id
         this.element.id = `venue-${this.id}`
-        this.element.addEventListener('click', this.showEvents)
+        this.element.addEventListener('click', this.handleClick)
         Venue.all.push(this)
     }
 
@@ -33,24 +33,28 @@ class Venue {
     }
 
 
-    showEvents = () => {
+    handleClick = (e) => {
         for(const event of this.all_events){
             let e = new Event(event)
                 e.slapOnDom()
         }
         let eventsDiv = this.element.querySelector('div')
+        this.toggle(eventsDiv)
+        if(e.target.innerText === 'Delete'){
+            VenueService.deleteVenue(e)
+        }
+
+    }
+
+    toggle(eventsDiv) {
         if(Venue.toggle === true){
             eventsDiv.style.display = 'none'
             Venue.toggle = false
         } else if (Venue.toggle === false) {
             eventsDiv.style.display = ''
             Venue.toggle = true
-
         }
-
     }
-
- 
 
     static renderForm(){
         Venue.venueForm.innerHTML += `
