@@ -30,12 +30,32 @@ class Venue {
         return this.element
     }
 
+    toggle = (e) => {
+        // debugger
+        let eventsDiv = e.element.querySelector('div')
+        debugger
+        eventsDiv.style.display = 'none'
+        // if (eventsDiv.style.display = ''){
+        //     eventsDiv.style.display = 'none'
+        // } else {
+        //     eventsDiv.style.diplay = ''
+
+        // }   ​
+    }
+
     showEvents = () => {
         
         for(const event of this.all_events){
             let e = new Event(event)
                 e.slapOnDom()
         }
+        let eventsDiv = this.element.querySelector('div')
+        if(eventsDiv.style.display === ''){
+            eventsDiv.style.display = 'none'
+        } else if (eventsDiv.style.display === 'none') {
+            eventsDiv.style.dsiplay = ''
+        }
+        // this.toggle(this)
     }
 
  
@@ -56,7 +76,5 @@ class Venue {
         Venue.venuesContainer.appendChild(this.render())
         const deleteButton = Venue.venuesContainer.querySelector('.delete-venue-button')
         deleteButton.addEventListener('click', VenueService.deleteVenue)
-
-        // debugger
     }
 }
