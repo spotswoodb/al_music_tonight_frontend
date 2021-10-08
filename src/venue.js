@@ -30,18 +30,6 @@ class Venue {
         return this.element
     }
 
-    toggle = (e) => {
-        // debugger
-        let eventsDiv = e.element.querySelector('div')
-        debugger
-        eventsDiv.style.display = 'none'
-        // if (eventsDiv.style.display = ''){
-        //     eventsDiv.style.display = 'none'
-        // } else {
-        //     eventsDiv.style.diplay = ''
-
-        // }   ​
-    }
 
     showEvents = () => {
         
@@ -53,9 +41,9 @@ class Venue {
         if(eventsDiv.style.display === ''){
             eventsDiv.style.display = 'none'
         } else if (eventsDiv.style.display === 'none') {
-            eventsDiv.style.dsiplay = ''
+            eventsDiv.style.display = ''
         }
-        // this.toggle(this)
+
     }
 
  

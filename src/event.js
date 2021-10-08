@@ -63,14 +63,5 @@ class Event {
 
         const eventsContainer = document.querySelector(`#venue-${this.venue_id}-events-container`)
         eventsContainer.appendChild(this.render())
-       
-    //     if (eventsContainer.classList.contains("open")){
-    //         eventsContainer.innerHTML = ''
-    //         eventsContainer.classList.remove('open')
-    //     } else {
-    //         debugger
-    //         eventsContainer.showEvents(this.venue_id)
-    //         eventsContainer.classList.add('open')
-    //     }
         }
     }
