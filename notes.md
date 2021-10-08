@@ -24,6 +24,11 @@ Event form:
 How to associate to a venue that's already been created referencing the venue
 by it's name in a dropdown?
 
+
+NEXT STEPS:
+- build createEvent function
+
 eventService:
 - Still need to refactor showing events from here instead of venue.js?
 - Create event fetch request
+
