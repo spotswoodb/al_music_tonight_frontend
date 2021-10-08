@@ -3,6 +3,8 @@ class Venue {
     static all = []
     static venuesContainer = document.getElementById('venues-container')
     static venueForm = document.getElementById('venue-form-container')
+    static toggle = false
+
 
     constructor({id, name, address, all_events}) {
         this.id = id
@@ -20,11 +22,11 @@ class Venue {
         this.element.innerHTML = `
                 <h2 class="name"><span data-venue-id="${this.id}">${this.name}</span></h2>
                 <p class="address">${this.address}</p>
-                
+                <button class='delete-venue-button' data-venue-id='${this.id}'>Delete</button>
+
                 <div id="venue-${this.id}-events-container">
                 </div>
 
-                <button class='delete-venue-button' data-venue-id='${this.id}'>Delete</button>
 
         `
         return this.element
@@ -32,16 +34,18 @@ class Venue {
 
 
     showEvents = () => {
-        
         for(const event of this.all_events){
             let e = new Event(event)
                 e.slapOnDom()
         }
         let eventsDiv = this.element.querySelector('div')
-        if(eventsDiv.style.display === ''){
+        if(Venue.toggle === true){
             eventsDiv.style.display = 'none'
-        } else if (eventsDiv.style.display === 'none') {
+            Venue.toggle = false
+        } else if (Venue.toggle === false) {
             eventsDiv.style.display = ''
+            Venue.toggle = true
+
         }
 
     }

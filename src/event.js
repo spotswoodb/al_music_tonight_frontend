@@ -35,25 +35,12 @@ class Event {
         this.element.innerHTML = `
 
             <li class="name">Name: ${this.name}</li>
-            <li class="address">Date: ${this.date}</li>
+            <li class="date">Date: ${this.date}</li>
             <li class="time">Time: ${this.time}</li>
 
         `
         return this.element
     }
-
-    // toggleEvents(e) {
-    //     const venueId = e.target.dataset.venueId
-    //     const eventContainer = document.querySelector(`#venue-${venueId}-events-container`)
-    //     if (eventContainer.classList.contains("open")){
-    //         eventContainer.innerHTML = ''
-    //         eventContainer.classList.remove('open')
-    //     } else {
-    //         debugger
-    //         Venue.showEvents(venueId)
-    //         eventContainer.classList.add('open')
-    //     }
-    // }
 
 
     slapOnDom(){
