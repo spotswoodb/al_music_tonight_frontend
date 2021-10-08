@@ -19,16 +19,17 @@ class Event {
 
     // static renderForm(){
     //     Event.eventForm.innerHTML += `
-    //         <form id="new-podcast-form">
+    //         <form id="new-event-form">
     //             Event Name: <input type='text' id='name'>
     //             Date: <input type='text' id='date'>
+    //             Time: <input type='text' id='time'>
+    //             Image URL: <input type='text' id='image'>
+
     //             <input type='submit' id='create'>
     //         </form>
     //     `
-    //     document.querySelector('#new-podcast-form').addEventListener('submit', EventService.createEvent)   
+    //     document.querySelector('#new-event-form').addEventListener('submit', EventService.createEvent)   
     // }
-
-    // write render function
 
     render = () => {
         this.element.innerHTML = `

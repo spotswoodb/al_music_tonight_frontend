@@ -46,4 +46,17 @@ class VenueService {
         })
     }
 
+    static deleteVenue(e){
+        const venueId = e.target.dataset.venueId
+        document.querySelector(`#venue-${venueId}`).remove()
+        fetch(`${url}/venues/${venueId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(r => r.json())
+        .then(json => alert(json.message))
+    }
+
 }

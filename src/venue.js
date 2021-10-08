@@ -23,6 +23,9 @@ class Venue {
                 
                 <div id="venue-${this.id}-events-container">
                 </div>
+
+                <button class='delete-venue-button' data-venue-id='${this.id}'>Delete</button>
+
         `
         return this.element
     }
@@ -51,6 +54,9 @@ class Venue {
 
     slapOnDom(){
         Venue.venuesContainer.appendChild(this.render())
+        const deleteButton = Venue.venuesContainer.querySelector('.delete-venue-button')
+        deleteButton.addEventListener('click', VenueService.deleteVenue)
+
         // debugger
     }
 }
