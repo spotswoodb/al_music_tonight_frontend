@@ -18,24 +18,24 @@ class Venue {
 
     render = () => {
         this.element.innerHTML = `
-
-            <div data-id="${this.id}">
-                <h2 class="name">${this.name}</h2>
+                <h2 class="name"><span data-venue-id="${this.id}">${this.name}</span></h2>
                 <p class="address">${this.address}</p>
                 
                 <div id="venue-${this.id}-events-container">
                 </div>
-            </div>
         `
         return this.element
     }
 
     showEvents = () => {
+        
         for(const event of this.all_events){
             let e = new Event(event)
                 e.slapOnDom()
         }
     }
+
+ 
 
     static renderForm(){
         Venue.venueForm.innerHTML += `
@@ -51,5 +51,6 @@ class Venue {
 
     slapOnDom(){
         Venue.venuesContainer.appendChild(this.render())
+        // debugger
     }
 }

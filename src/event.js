@@ -39,30 +39,37 @@ class Event {
 
         `
         return this.element
-
-    //    for(const event of this.all_events){
-           
-    //        let div = document.createElement('ul')
-    //        div.innerHTML = `
-    //         <li>Name: ${event.name}</li>
-    //         <li>Date: ${event.date}</li>
-    //         <li><img src='${event.image}'/><li>
-    //         // add button here -> "see events"
-    //        `
-    //        this.element.append(div)
-    //    }
     }
 
-
-    // write slapOnDom function
-
-    // play around with where I will be appending events
+    // toggleEvents(e) {
+    //     const venueId = e.target.dataset.venueId
+    //     const eventContainer = document.querySelector(`#venue-${venueId}-events-container`)
+    //     if (eventContainer.classList.contains("open")){
+    //         eventContainer.innerHTML = ''
+    //         eventContainer.classList.remove('open')
+    //     } else {
+    //         debugger
+    //         Venue.showEvents(venueId)
+    //         eventContainer.classList.add('open')
+    //     }
+    // }
 
 
     slapOnDom(){
+        if (document.querySelector(`#event-${this.id}`)){
+            return
+        }
+
         const eventsContainer = document.querySelector(`#venue-${this.venue_id}-events-container`)
-
         eventsContainer.appendChild(this.render())
+       
+    //     if (eventsContainer.classList.contains("open")){
+    //         eventsContainer.innerHTML = ''
+    //         eventsContainer.classList.remove('open')
+    //     } else {
+    //         debugger
+    //         eventsContainer.showEvents(this.venue_id)
+    //         eventsContainer.classList.add('open')
+    //     }
+        }
     }
-
-}
