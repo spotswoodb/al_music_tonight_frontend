@@ -4,7 +4,7 @@ class EventService {
         this.url = url
     }
 
-    // static createEvent(event){
+    // createEvent(event){
     //     debugger
     //     event.preventDefault()
     //     const form = event.target
@@ -14,6 +14,8 @@ class EventService {
     //             date: form.querySelector(`#date`).value,
     //             time: form.querySelector(`#time`).value,
     //             image: form.querySelector(`#image`).value
+    //             venue_id
+    //   ^FIX THIS
     //         }
     //     }
     //     form.reset()

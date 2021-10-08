@@ -27,6 +27,8 @@ class Venue {
                 <div id="venue-${this.id}-events-container">
                 </div>
 
+                
+
 
         `
         return this.element
@@ -64,7 +66,7 @@ class Venue {
                 <input type='submit' id='create'>
             </form>
         `
-        document.querySelector('#new-venue-form').addEventListener('submit', VenueService.createVenue)   
+        document.querySelector('#new-venue-form').addEventListener('submit', venueService.createVenue)   
     }
 
 

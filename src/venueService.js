@@ -19,14 +19,12 @@ class VenueService {
     }
 
 
-    static createVenue(venue){
-        venue.preventDefault()
-        const form = venue.target
+    createVenue = (e) => {
+        e.preventDefault()
+        const form = e.target
         const data = {
-            venue: {
                 name: form.querySelector(`#name`).value,
                 address: form.querySelector(`#address`).value
-            }
         }
         form.reset()
 
