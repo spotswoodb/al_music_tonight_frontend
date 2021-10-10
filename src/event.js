@@ -17,19 +17,25 @@ class Event {
         Event.all.push(this)
     }
 
-    // static renderForm(){
-    //     Event.eventForm.innerHTML += `
-    //         <form id="new-event-form">
-    //             Event Name: <input type='text' id='name'>
-    //             Date: <input type='text' id='date'>
-    //             Time: <input type='text' id='time'>
-    //             Image URL: <input type='text' id='image'>
-
-    //             <input type='submit' id='create'>
-    //         </form>
-    //     `
-    //     document.querySelector('#new-event-form').addEventListener('submit', EventService.createEvent)   
-    // }
+    static renderForm(){
+        Event.eventForm.innerHTML += `
+            <form id="new-event-form">
+                Event Name: <input type='text' id='name'>
+                Date: <input type='text' id='date'>
+                Time: <input type='text' id='time'>
+                Image URL: <input type='text' id='image'>
+                <label for="venue_id">Choose a venue:</label>
+                <select id="venue_id" name="venue" size="4" multiple>
+                  <option value="1">Brickyard</option>
+                  <option value="2">The Merry Widow</option>
+                </select><br><br>
+                <input type='submit' id='create'>
+            </form>
+        `
+        document.querySelector('#new-event-form').addEventListener('submit', eventService.createEvent)
+        
+        // fix this^^^
+    }
 
     render = () => {
         this.element.innerHTML = `
