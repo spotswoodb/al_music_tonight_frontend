@@ -15,7 +15,7 @@ Copy and paste the following in your terminal: git clone git@github.com:spotswoo
 Follow the link https://github.com/spotswoodb/al_music_tonight_frontend for any pull requests.
 
 ## Files
-AL Music Tonight uses JavaScript for communicating with the backend and displaying information on the frontend. The backend of the application is written in Ruby on Rails.
+AL Music Tonight uses JavaScript for communicating with the backend and displaying information on the frontend. The backend of the application is written in Ruby on Rails and can be accessed here: https://github.com/spotswoodb/al_music_tonight.
 
 ## License
 The app is available as open source under the terms of the MIT License.
