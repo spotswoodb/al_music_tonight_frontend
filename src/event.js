@@ -35,7 +35,7 @@ class Event {
         `
         document.querySelector('#new-event-form').addEventListener('submit', eventService.createEvent)
         
-        // ADD CODE TO ITERATE THROUGH THE OPTIONS IN THE EVENT FORM EVERY TIME A NEW EVENT IS ADDED
+        // ADD CODE TO ITERATE THROUGH THE OPTIONS IN THE EVENT FORM EVERY TIME A NEW VENUE IS ADDED
     }
 
     // handleVenues = (e) => {
