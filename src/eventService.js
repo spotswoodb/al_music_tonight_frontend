@@ -14,9 +14,10 @@ class EventService {
                 image: form.querySelector(`#image`).value,
                 venue_id: form.querySelector(`#venue_id`).value
         }
+        debugger
         form.reset()
 
-        fetch(`${this.url}/events`, {
+        fetch(`${url}/events`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,8 +27,9 @@ class EventService {
         })
         .then(r => r.json())
         .then(event => {
+            debugger
             const e = new Event(event)
-            e.slapOnDom
+            e.slapOnDom()
         })
     }
     

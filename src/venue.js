@@ -26,10 +26,6 @@ class Venue {
 
                 <div id="venue-${this.id}-events-container">
                 </div>
-
-                
-
-
         `
         return this.element
     }
