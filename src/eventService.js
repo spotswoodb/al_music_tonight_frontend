@@ -4,18 +4,15 @@ class EventService {
         this.url = url
     }
 
-    createEvent(e){
-        debugger
+    createEvent = (e) => {
         e.preventDefault()
         const form = e.target
         const data = {
-            event: {
                 name: form.querySelector(`#name`).value,
                 date: form.querySelector(`#date`).value,
                 time: form.querySelector(`#time`).value,
                 image: form.querySelector(`#image`).value,
                 venue_id: form.querySelector(`#venue_id`).value
-            }
         }
         form.reset()
 
