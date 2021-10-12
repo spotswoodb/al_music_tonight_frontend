@@ -35,8 +35,19 @@ class Event {
         `
         document.querySelector('#new-event-form').addEventListener('submit', eventService.createEvent)
         
-        // fix this^^^
+        // ADD CODE TO ITERATE THROUGH THE OPTIONS IN THE EVENT FORM EVERY TIME A NEW EVENT IS ADDED
     }
+
+    // handleVenues = (e) => {
+    //     for(const venue of this.venue_id){
+    //         let e = new Event(event)
+    //             e.slapOnDom()
+    //     }
+    //     let addVenue = this.element.querySelector('div')
+
+    // }
+
+    // fix this^ to allow for new venues to be added to the selection box when created
 
     render = () => {
         this.element.innerHTML = `

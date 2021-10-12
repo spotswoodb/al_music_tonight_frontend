@@ -6,7 +6,7 @@ class VenueService {
 
 
     getVenues() {
-        fetch(this.url + `/venues`)
+        fetch(`${url}/venues`)
         .then(r => r.json())
         .then(data => {
             for(const venue of data.data){
@@ -27,7 +27,6 @@ class VenueService {
                 address: form.querySelector(`#address`).value
         }
         form.reset()
-
         fetch(`${url}/venues`, {
             method: 'POST',
             headers: {
