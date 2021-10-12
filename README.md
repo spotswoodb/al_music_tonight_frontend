@@ -5,6 +5,8 @@ In addition to learning web development, I am a musician in Alabama. I've heard 
 
 Configuration
 This application uses the powers of JavaScript, Ruby on Rails, PostgreSQL, and Active Record.
+- Ruby 2.6.1
+- PostgreSQL 13.4
 
 Installation
 Copy and past the following in your terminal: git clone git@github.com:spotswoodb/al_music_tonight_frontend.git. Continue by typing 'cd al_music_tonight_frontend' to enter the al_music_tonight_frontend folder. You will also need to visit https://github.com/spotswoodb/al_music_tonight in order to access the associated PostgreSQL database or copy and paste the following in your terminal: git@github.com:spotswoodb/al_music_tonight.git. Continue by typing 'cd al_music_tonight' to enter the al_music_tonight folder. Then start your rails server in the terminal using the command 'rails s'.
