@@ -14,7 +14,6 @@ class EventService {
                 image: form.querySelector(`#image`).value,
                 venue_id: form.querySelector(`#venue_id`).value
         }
-        debugger
         form.reset()
 
         fetch(`${url}/events`, {
@@ -27,7 +26,6 @@ class EventService {
         })
         .then(r => r.json())
         .then(event => {
-            debugger
             const e = new Event(event)
             e.slapOnDom()
         })
