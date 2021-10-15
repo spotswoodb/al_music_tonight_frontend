@@ -28,7 +28,7 @@ class Event {
                 <select id="venue_id" name="venue" size="4" multiple>
                   <option value="1">Brickyard</option>
                   <option value="2">The Merry Widow</option>
-                  <option value="3">The Bone and Barrel</option>                 
+                  <option value="7">The Bone and Barrel</option>                 
                 </select><br><br>
                 <input type='submit' id='create'>
             </form>
