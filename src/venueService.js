@@ -14,6 +14,8 @@ class VenueService {
                 let v = new Venue({id: venue.id, ...venue.attributes})
                 
                 v.slapOnDom()
+                v.addToDropDown()
+
             }
         })
     }
@@ -39,7 +41,7 @@ class VenueService {
         .then(venue => {
             const v = new Venue(venue)
             v.slapOnDom()
-            // v.addToDropDown()
+            v.addToDropDown()
         })
     }
 

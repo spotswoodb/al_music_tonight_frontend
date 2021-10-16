@@ -74,7 +74,17 @@ class Venue {
 
 
     addToDropDown(){
+        const venuesDropdown = document.getElementById('venue-dropdown')
         const option = document.createElement('option')
+
         option.value = this.id
+        option.innerText = this.name
+        debugger
+
+        venuesDropdown.append(option)
     }
+
+    // removeFromDropdown(){
+    //     if
+    // }
 }

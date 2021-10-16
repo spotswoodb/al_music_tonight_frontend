@@ -4,6 +4,7 @@ class Event {
     static all = []
     static eventForm = document.getElementById('event-form-container')
 
+
     constructor({id, name, date, time, image, venue_id}) {
         this.id = id
         this.name = name
@@ -24,8 +25,8 @@ class Event {
                 Date: <input type='text' id='date'>
                 Time: <input type='text' id='time'>
                 Image URL: <input type='text' id='image'>
-                <label for="venue_id">Choose a venue:</label>
-                <select id="venue_id" name="venue-dropdown" size="4" multiple>             
+                <label for="venue-dropdown">Choose a venue:</label>
+                <select id="venue-dropdown" name="venue-id">             
                 </select><br><br>
                 <input type='submit' id='create'>
             </form>
