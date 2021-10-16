@@ -71,4 +71,10 @@ class Venue {
         const deleteButton = Venue.venuesContainer.querySelector('.delete-venue-button')
         deleteButton.addEventListener('click', VenueService.deleteVenue)
     }
+
+
+    addToDropDown(){
+        const option = document.createElement('option')
+        option.value = this.id
+    }
 }

@@ -39,6 +39,7 @@ class VenueService {
         .then(venue => {
             const v = new Venue(venue)
             v.slapOnDom()
+            // v.addToDropDown()
         })
     }
 

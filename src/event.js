@@ -25,10 +25,7 @@ class Event {
                 Time: <input type='text' id='time'>
                 Image URL: <input type='text' id='image'>
                 <label for="venue_id">Choose a venue:</label>
-                <select id="venue_id" name="venue" size="4" multiple>
-                  <option value="1">Brickyard</option>
-                  <option value="2">The Merry Widow</option>
-                  <option value="7">The Bone and Barrel</option>                 
+                <select id="venue_id" name="venue-dropdown" size="4" multiple>             
                 </select><br><br>
                 <input type='submit' id='create'>
             </form>
@@ -69,4 +66,5 @@ class Event {
         const eventsContainer = document.querySelector(`#venue-${this.venue_id}-events-container`)
         eventsContainer.appendChild(this.render())
         }
+
     }
