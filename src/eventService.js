@@ -11,7 +11,6 @@ class EventService {
                 name: form.querySelector(`#name`).value,
                 date: form.querySelector(`#date`).value,
                 time: form.querySelector(`#time`).value,
-                image: form.querySelector(`#image`).value,
                 venue_id: form.querySelector(`#venue_id`).value
         }
         form.reset()

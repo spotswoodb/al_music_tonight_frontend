@@ -23,7 +23,6 @@ class Event {
                 Event Name: <input type='text' id='name'>
                 Date: <input type='text' id='date'>
                 Time: <input type='text' id='time'>
-                Image URL: <input type='text' id='image'>
                 <label for="venue-dropdown">Choose a venue:</label>
                 <select id="venue-dropdown" name="venue-id">             
                 </select><br><br>
@@ -32,36 +31,24 @@ class Event {
         `
         document.querySelector('#new-event-form').addEventListener('submit', eventService.createEvent)
         
-        // ADD CODE TO ITERATE THROUGH THE OPTIONS IN THE EVENT FORM EVERY TIME A NEW VENUE IS ADDED
     }
-
-    // handleVenues = (e) => {
-    //     for(const venue of this.venue_id){
-    //         let e = new Event(event)
-    //             e.slapOnDom()
-    //     }
-    //     let addVenue = this.element.querySelector('div')
-
-    // }
-
-    // fix this^ to allow for new venues to be added to the selection box when created
 
     render = () => {
         this.element.innerHTML = `
-
+        <div id="event-${this.id}-container"  data-bs-toggle="collapse"
             <li class="name">Name: ${this.name}</li>
             <li class="date">Date: ${this.date}</li>
             <li class="time">Time: ${this.time}</li>
-
+        </div>
         `
         return this.element
     }
 
 
     slapOnDom(){
-        if (document.querySelector(`#event-${this.id}`)){
-            return
-        }
+        // if (document.querySelector(`#event-${this.id}`)){
+        //     return
+        // }
 
         const eventsContainer = document.querySelector(`#venue-${this.venue_id}-events-container`)
         eventsContainer.appendChild(this.render())

@@ -23,6 +23,10 @@ class Venue {
                 <h2 class="name"><span data-venue-id="${this.id}">${this.name}</span></h2>
                 <p class="address">${this.address}</p>
                 <button class='delete-venue-button' data-venue-id='${this.id}'>Delete</button>
+                
+                <button class="show-events-button" data-venue-id='${this.id}' type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                See Events
+                </button>
 
                 <div id="venue-${this.id}-events-container">
                 </div>
@@ -32,27 +36,34 @@ class Venue {
 
 
     handleClick = (e) => {
+        debugger
         for(const event of this.all_events){
             let e = new Event(event)
                 e.slapOnDom()
         }
-        let eventsDiv = this.element.querySelector('div')
+        const eventsDiv = this.element.querySelector('div')
         this.toggle(eventsDiv)
         if(e.target.innerText === 'Delete'){
             VenueService.deleteVenue(e)
         }
-
-    }
-
-    toggle(eventsDiv) {
-        if(Venue.toggle === true){
-            eventsDiv.style.display = 'none'
-            Venue.toggle = false
-        } else if (Venue.toggle === false) {
-            eventsDiv.style.display = ''
-            Venue.toggle = true
+        if(e.target.innerText === 'See Events'){
+            debugger
+            VenueService.getVenues()
         }
+
     }
+
+    // toggle(style) {
+    //     style.display = style.display === 'none' ? '' : 'none';
+    //     // debugger
+    //     // if(Venue.toggle === true){
+    //     //     eventsDiv.style.display = 'none'
+    //     //     Venue.toggle = false
+    //     // } else if (Venue.toggle === false) {
+    //     //     eventsDiv.style.display = ''
+    //     //     Venue.toggle = true
+    //     // }
+    // }
 
     static renderForm(){
         Venue.venueForm.innerHTML += `
@@ -79,12 +90,8 @@ class Venue {
         option.id = this.id
         option.value = this.id
         option.innerText = this.name
-        // debugger
 
         venuesDropdown.append(option)
     }
 
-    removeFromDropdown = (e) => {
-        debugger
-    }
 }
