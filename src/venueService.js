@@ -48,6 +48,7 @@ class VenueService {
     static deleteVenue(e){
         const venueId = e.target.dataset.venueId
         document.querySelector(`#venue-${venueId}`).remove()
+        document.getElementById(`${venueId}`).remove()
         fetch(`${url}/venues/${venueId}`, {
             method: 'DELETE',
             headers: {
