@@ -5,12 +5,11 @@ class Event {
     static eventForm = document.getElementById('event-form-container')
 
 
-    constructor({id, name, date, time, image, venue_id}) {
+    constructor({id, name, date, time, venue_id}) {
         this.id = id
         this.name = name
         this.date = date
         this.time = time
-        this.image = image
         this.venue_id = venue_id
         this.element = document.createElement('ul')
         this.element.dataset.id = this.id

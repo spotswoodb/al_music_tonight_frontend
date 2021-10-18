@@ -6,6 +6,7 @@ class VenueService {
 
 
     getVenues() {
+        // debugger
         fetch(`${url}/venues`)
         .then(r => r.json())
         .then(data => {
