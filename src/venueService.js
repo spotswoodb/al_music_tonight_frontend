@@ -6,23 +6,20 @@ class VenueService {
 
 
     getVenues() {
-        // debugger
         fetch(`${url}/venues`)
         .then(r => r.json())
         .then(data => {
             for(const venue of data.data){
-                
                 let v = new Venue({id: venue.id, ...venue.attributes})
-                
                 v.slapOnDom()
                 v.addToDropDown()
-
             }
         })
     }
 
+    
 
-    createVenue = (e) => {
+    static createVenue(e){
         e.preventDefault()
         const form = e.target
         const data = {

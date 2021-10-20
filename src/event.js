@@ -36,16 +36,14 @@ class Event {
     render = () => {
         this.element.innerHTML = `
 
-        <div id="event-${this.id}-container"  data-bs-toggle="collapse"
             <li class="name">Name: ${this.name}</li>
             <li class="date">Date: ${this.date}</li>
             <li class="time">Time: ${this.time}</li>
-        </div>
+
         `
         return this.element
     }
 
-// NOTES Oct 18 - added div with toggle collapse bootstrap feature
 
     slapOnDom(){
         // if (document.querySelector(`#event-${this.id}`)){

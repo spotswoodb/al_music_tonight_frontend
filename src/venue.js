@@ -24,45 +24,52 @@ class Venue {
                 <p class="address">${this.address}</p>
                 <button class='delete-venue-button' data-venue-id='${this.id}'>Delete</button>
                 
-                <button class="show-events-button" data-venue-id='${this.id}' type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button class="show-events-button" data-venue-id='${this.id}' type="button" data-bs-toggle="collapse" aria-expanded="false">
                 See Events
                 </button>
 
-                <div id="venue-${this.id}-events-container">
+                <div id="venue-${this.id}-events-container" >
                 </div>
+
         `
         return this.element
     }
 
 
+
     handleClick = (e) => {
-        debugger
-        for(const event of this.all_events){
-            let e = new Event(event)
-                e.slapOnDom()
-        }
+        // debugger
+        
         const eventsDiv = this.element.querySelector('div')
-        this.toggle(eventsDiv)
         if(e.target.innerText === 'Delete'){
             VenueService.deleteVenue(e)
         }
         if(e.target.innerText === 'See Events'){
-            debugger
-            VenueService.getVenues()
+            // debugger
+            eventsDiv.addEventListener('click', this.getEvents())
+            // this.toggle(eventsDiv)
+
+
         }
 
     }
 
-    // toggle(style) {
-    //     style.display = style.display === 'none' ? '' : 'none';
-    //     // debugger
-    //     // if(Venue.toggle === true){
-    //     //     eventsDiv.style.display = 'none'
-    //     //     Venue.toggle = false
-    //     // } else if (Venue.toggle === false) {
-    //     //     eventsDiv.style.display = ''
-    //     //     Venue.toggle = true
-    //     // }
+    getEvents(e){
+        for(const event of this.all_events){
+            let e = new Event(event)
+                e.slapOnDom()
+        }
+    }
+
+    // toggle(eventsDiv) {
+    //     // style.display = style.display === 'none' ? '' : 'none';
+    //     if(Venue.toggle === true){
+    //         eventsDiv.style.display = 'none'
+    //         Venue.toggle = false
+    //     } else if (Venue.toggle === false) {
+    //         eventsDiv.style.display = ''
+    //         Venue.toggle = true
+    //     }
     // }
 
     static renderForm(){
