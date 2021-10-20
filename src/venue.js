@@ -28,8 +28,9 @@ class Venue {
                 See Events
                 </button>
 
-                <div id="venue-${this.id}-events-container" >
+                <div class="p-2 bd-highlight" id="venue-${this.id}-events-container">
                 </div>
+                <br>
 
         `
         return this.element

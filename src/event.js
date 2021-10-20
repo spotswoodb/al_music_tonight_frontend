@@ -22,7 +22,7 @@ class Event {
             <form id="new-event-form">
                 Event Name: <input type='text' id='name'>
                 Date: <input type='text' id='date'>
-                Time: <input type='text' id='time'>
+                Time: <input type='text' id='time'><br>
                 <label for="venue-dropdown">Choose a venue:</label>
                 <select id="venue-dropdown" name="venue-id">             
                 </select><br><br>
@@ -36,9 +36,9 @@ class Event {
     render = () => {
         this.element.innerHTML = `
 
-            <li class="name">Name: ${this.name}</li>
-            <li class="date">Date: ${this.date}</li>
-            <li class="time">Time: ${this.time}</li>
+        <li class="name">${this.name}</li>
+        <li class="date">${this.date}</li>
+        <li class="time">${this.time}</li>
 
         `
         return this.element
@@ -46,12 +46,11 @@ class Event {
 
 
     slapOnDom(){
-        // if (document.querySelector(`#event-${this.id}`)){
-        //     return
-        // }
-
+        if(document.querySelector(`#event-${this.id}`)){
+            return
+        }
         const eventsContainer = document.querySelector(`#venue-${this.venue_id}-events-container`)
         eventsContainer.appendChild(this.render())
-        }
-
     }
+
+}

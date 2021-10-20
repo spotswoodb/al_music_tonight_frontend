@@ -19,7 +19,7 @@ class VenueService {
 
     
 
-    static createVenue(e){
+    createVenue(e){
         e.preventDefault()
         const form = e.target
         const data = {
