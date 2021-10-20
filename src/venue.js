@@ -39,38 +39,35 @@ class Venue {
 
     handleClick = (e) => {
         // debugger
-        
         const eventsDiv = this.element.querySelector('div')
+
         if(e.target.innerText === 'Delete'){
             VenueService.deleteVenue(e)
         }
         if(e.target.innerText === 'See Events'){
             // debugger
             eventsDiv.addEventListener('click', this.getEvents())
-            // this.toggle(eventsDiv)
-
-
         }
+        this.toggle(eventsDiv)
 
     }
 
-    getEvents(e){
+    getEvents = () => {
         for(const event of this.all_events){
             let e = new Event(event)
                 e.slapOnDom()
         }
     }
 
-    // toggle(eventsDiv) {
-    //     // style.display = style.display === 'none' ? '' : 'none';
-    //     if(Venue.toggle === true){
-    //         eventsDiv.style.display = 'none'
-    //         Venue.toggle = false
-    //     } else if (Venue.toggle === false) {
-    //         eventsDiv.style.display = ''
-    //         Venue.toggle = true
-    //     }
-    // }
+    toggle(eventsDiv) {
+        if(Venue.toggle === true){
+            eventsDiv.style.display = 'none'
+            Venue.toggle = false
+        } else if (Venue.toggle === false) {
+            eventsDiv.style.display = ''
+            Venue.toggle = true
+        }
+    }
 
     static renderForm(){
         Venue.venueForm.innerHTML += `

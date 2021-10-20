@@ -4,10 +4,6 @@ class EventService {
         this.url = url
     }
 
-    getEvents(){
-        
-    }
-
     static createEvent(e){
         e.preventDefault()
         const form = e.target
