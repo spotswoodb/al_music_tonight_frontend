@@ -39,14 +39,12 @@ class Venue {
 
 
     handleClick = (e) => {
-        // debugger
         const eventsDiv = this.element.querySelector('div')
 
         if(e.target.innerText === 'Delete'){
             VenueService.deleteVenue(e)
         }
         if(e.target.innerText === 'See Events'){
-            // debugger
             eventsDiv.addEventListener('click', this.getEvents())
         }
         this.toggle(eventsDiv)
@@ -95,7 +93,6 @@ class Venue {
         option.id = this.id
         option.value = this.id
         option.innerText = this.name
-
         venuesDropdown.append(option)
     }
 
