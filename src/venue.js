@@ -80,7 +80,7 @@ class Venue {
     }
 
 
-    slapOnDom(){
+    slapOnDom = () => {
         Venue.venuesContainer.appendChild(this.render())
         const deleteButton = Venue.venuesContainer.querySelector('.delete-venue-button')
         deleteButton.addEventListener('click', VenueService.deleteVenue)

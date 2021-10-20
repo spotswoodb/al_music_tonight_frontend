@@ -33,3 +33,5 @@ eventService:
 - Still need to refactor showing events from here instead of venue.js?
 - Create event fetch request
 
+.then .json and fetch - investigate return values and how they work together
+- Look up documentation on MDN

@@ -4,14 +4,14 @@ class EventService {
         this.url = url
     }
 
-    static createEvent(e){
+    createEvent(e){
         e.preventDefault()
         const form = e.target
         const data = {
                 name: form.querySelector(`#name`).value,
                 date: form.querySelector(`#date`).value,
                 time: form.querySelector(`#time`).value,
-                venue_id: form.querySelector(`#venue_id`).value
+                venue_id: form.querySelector(`#venue-dropdown`).value
         }
         form.reset()
 
